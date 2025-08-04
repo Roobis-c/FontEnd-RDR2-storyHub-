@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="asset/RDR2_logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <title>RDR 2 Story Hub</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        cursor: url('asset/arrow.png'), auto;
+         font-family: 'Kumbh Sans', sans-serif;
+        background-color: black;
+        color: white;
+    }
+    a:hover{
+        cursor: pointer;
+        cursor: url('asset/hand-pointer.png'), auto;
+    }
+    h1{
+        font-family: "Syne", sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+    }
+
+   #body1 h1{
+        font-family: "Syne", sans-serif;
+        font-size: 4rem;
+        font-weight: 800;
+        color: rgb(255, 255, 255);
+        text-shadow: 2px 2px 4px black;
+    }
+   
+    #body1{
+        height: 100vh;
+        padding-top: 28%;
+        text-align: center;
+        background-image: url('asset/wall2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+     #body1 p{
+        font-family: "Syne", sans-serif;
+        font-size: 1.5rem;
+        color: rgb(255, 255, 255);
+        text-shadow: 2px 2px 4px black;
+    }
+    #mobile_img{
+        display: none; /*change this in query*/
+    }
+    #character-cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+
+    }
+    #character-card{
+        width: 300px;
+        margin: 20px;
+        max-height: 600px;
+        padding: 25px;
+        border-radius: 10px;
+        border: 0.2px  solid  rgba(155, 150, 150, 0.482);
+        text-align: center;
+    }
+
+    #character-card:hover{
+        transition: all 0.5s ease-in-out;
+transform: scale(1.05);
+    }
+    #character-card img{
+        width: 200px;
+        object-fit: contain;
+    }
+    #body2 #ShortStory{
+        padding: 20px;
+        margin-left: 30%;
+        margin-right: 30%; /* Change this into 10% in mobile*/
+        margin-bottom: 50px;
+        font-size: 17px;
+        background-color: rgba(255, 0, 0, 0.707);
+        border: 0.2px  solid  rgba(155, 150, 150, 0.482);
+        border-radius: 10px;
+    }
+ 
+    #quote{
+        border-radius: 20px;
+        border: 1px solid rgba(155, 150, 150, 0.482);
+        margin-left:10%;
+        padding: 10px;
+        margin-right: 10%;
+        display: flex;
+        margin: 20px 10% 20px 10%;
+    }
+    #quote h1{
+        padding: 20px;
+        font-size: 3rem;
+        margin-top: 100px;
+    }
+    #right1{
+        flex: 5;
+        height: 100%;
+    }
+    #left1{
+        flex: 1;
+        height: 100%;
+    }
+      #right2{
+        flex: 1;
+        height: 100%;
+    }
+    #left2{
+        flex: 5;
+        height: 100%;
+    }
+    #honor{
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-bottom: 10px;
+    }
+    #honor img{
+        cursor: pointer;
+        cursor: url('asset/hand-pointer.png'), auto;
+        border-radius: 50%;
+        border: 2px solid white;
+        transition: all 0.2s ease-in-out;
+    }
+    #left_honor,#right_honor{
+         cursor: pointer;
+        cursor: url('asset/hand-pointer.png'), auto;  
+        transition: all 0.2s ease-in-out;
+    }
+    #honor #block:hover{
+        transform: scale(1.2);
+    }
+    #left_honor{
+        flex: 1;
+        text-align: center;
+        height: 100%;
+    }
+    #right_honor{
+        flex: 1;
+        height: 100%;
+    }
+    footer{
+        margin-top: 100px;
+        padding-top: 100px;
+        border-top-left-radius: 200px;
+        border-top-right-radius: 200px;
+        padding-bottom: 100px;
+        border: 1px solid rgba(255, 255, 255, 0.26);
+        background-image: url('asset/Transparent_bg.png');
+        color: white;
+    }
+    footer h1{
+        font-family: "Syne", sans-serif;
+        font-weight: 800;
+        color: rgb(255, 255, 255);
+        font-size: 4rem;
+    }
+    @media screen and (max-width: 768px) {
+    #body1 {
+        padding-top: 40%;
+        background-position: center;
+        text-align: center;
+    }
+
+    #PC_title {
+        margin-top:60%;
+        font-size: 2 rem;
+    }
+
+    #character-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #character-card {
+        width: 90%;
+        margin: 15px 0;
+    }
+
+    #body2 #ShortStory {
+        margin-left: 10%;
+        margin-right: 10%;
+        font-size: 1rem;
+    }
+    #wheel {
+        width: 80%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    #quote {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #quote h1 {
+        font-size: 1.5rem;
+        margin-top: 20px;
+    }
+
+    #quote img {
+        width: 100%;
+        height: auto;
+    }
+
+    #honor {
+        flex-direction: column;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #left_honor,
+    #right_honor {
+        width: 100%;
+        text-align: center;
+    }
+
+    footer {
+        padding: 40px 20px;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+    }
+
+    footer h1 {
+        font-size: 2.5rem;
+    }
+}
+
+
+</style>
+<body>
+<div id="body1">
+    <h1 id="PC_title">RDR 2 Story HUB</h1>
+    <p>Explore the rich narrative and characters of Red Dead Redemption 2.</p>
+</div>
+
+
+<div id="body2">
+    <center>
+        <img src="asset/RDR2_GD.png" alt="" style="margin-bottom: 30px;">
+        <div id="ShortStory">
+           <p>Red Dead Redemption 2 is an epic Western tale set in 1899, focusing on Arthur Morgan, a skilled outlaw and a member of the Van der Linde gang. The gang, led by the charismatic Dutch Van der Linde, is trying to survive in a rapidly changing America where outlaws are becoming a thing of the past. They’re constantly on the run from law enforcement and rival gangs, leading to intense conflicts and adventures across diverse landscapes, from snowy mountains to bustling towns and vast plains. Arthur faces personal struggles and moral dilemmas, questioning his loyalty and identity while being forced to confront the consequences of his lifestyle. As the story unfolds, Arthur and the gang grapple with loyalty, honor, and survival, highlighting the complex bonds within the gang and the harsh realities of a fading Wild West.</p>
+        </div>
+
+        <img src="asset/RDR2_gun.png" alt="" width="300px" height="180px">
+
+        <div id="character-cards">
+            <div id="character-card">
+                <img src="asset/character/arthur.png" alt="" height="180px">
+                <h1>Arthur Morgan</h1>
+                <p>Arthur Morgan is a rugged and skilled outlaw, deeply loyal to the Van der Linde gang. Haunted by a violent past, he seeks redemption while navigating a world of betrayal and chaos. Beneath his tough exterior lies introspection and compassion, showing a man torn between duty and conscience. His moral struggle defines a journey of purpose, sacrifice, and the pursuit of meaning in an unforgiving world.</p>            
+            </div>
+
+            <div id="character-card">
+                <img src="asset/character/john.png" alt="" height="180px">
+                <h1>John Marston</h1>
+                <p>John Marston is a former outlaw striving to escape his past and build a future for his family. A capable gunslinger, he is torn between old loyalties and the desire for redemption. John's life is marked by resilience, personal loss, and moral conflict. He embodies the transition from lawlessness to responsibility, navigating a world where survival means choosing between love, loyalty, and self-preservation.</p>
+            </div>
+
+            <div id="character-card">
+                <img src="asset/character/sadie.png" alt="" height="180px">
+                <h1>Sadie Adler</h1>
+                <p>Sadie Adler begins as a grieving widow and transforms into a fierce, independent gunslinger. After her husband’s murder, she joins the Van der Linde gang, driven by vengeance and survival. Her journey is one of emotional evolution, growing from vulnerability into fearlessness. Sadie’s strength, loyalty, and refusal to be broken highlight her as a powerful and inspiring figure in a brutal, lawless world.</p>
+            </div>
+
+            <div id="character-card">
+                <img src="asset/character/micha.png" alt="" height="180px">
+                <h1> Micah Bell</h1>
+                <p>Micah Bell is a cunning and ruthless outlaw whose self-interest drives him to manipulate those around him. A divisive force in the Van der Linde gang, he sows distrust and chaos while gaining Dutch’s favor. His ambition and disloyalty ultimately lead to betrayal and the gang’s downfall. Micah thrives on conflict and deception, proving himself a dangerous and treacherous figure throughout the story.</p>
+            </div>
+
+            <div id="character-card">
+                <img src="asset/character/dutch.png" alt="" height="180px">
+                <h1>Dutch</h1>
+                <p style="  font-family: 'Syne', sans-serif;font-weight: 800;"><b>Van Der Linde</b> </p>
+                <p> Dutch Van der Linde is the charismatic leader of the gang, driven by ideals of freedom and rebellion. Though once inspiring, his vision becomes clouded by delusion and ego. As lawmen close in, Dutch’s behavior grows erratic and dangerous. He manipulates loyalty with empty promises, leading the gang into collapse. His fall from grace reveals the tragic cost of clinging to broken dreams.</p>
+            </div>
+
+            <div id="character-card">
+                <img src="asset/character/hosea.png" alt=""height="180px">
+                <h1>Hosea Matthews</h1>
+                <p>Hosea Matthews is the gang’s elder statesman, offering wisdom, strategy, and moral grounding. Acting as Arthur’s mentor, Hosea balances criminal life with charm and reason. He values planning over violence and often urges caution. Beloved and respected, his tragic death marks a turning point in the gang’s decline. Hosea's loss signifies the fading hope and humanity.</p>
+             </div>
+
+            <div id="character-card">
+                <img src="asset/character/charles.png" alt="" height="180px">
+                <h1>Charles Smith</h1>
+                <p>Charles Smith is a noble and skilled fighter of mixed heritage, embodying strength, compassion, and resilience. A voice of reason in the Van der Linde gang, he respects nature and values life. His survival skills and loyalty make him invaluable, yet his quiet demeanor hides deep conviction. Charles stands for justice in a world of cruelty, navigating identity and honor with unshakable dignity. </p>
+            </div>
+
+            <div id="character-card">
+                <img src="asset/character/abigail.png" alt="" height="180px">    
+                <h1>Abigail And Jack</h1>
+                <p>Abigail Marston is a strong-willed woman, fiercely protective of her son, Jack, and partner, John. Her love fuels her resilience in the face of hardship. Jack represents innocence and the dream of a peaceful future, far from guns and violence. Together, they symbolize sacrifice and the desire for redemption. Their story highlights the emotional cost of an outlaw life and the pursuit of hope.</p>
+            </div>
+        </div>
+        <img id="wheel" src="asset/wheel.png" alt="">
+    </center>
+
+
+
+    <div id="quote">
+        <div id="left1">
+            <img src="asset/RDR2_arthur.png" alt="" width="500px" height="500px">
+        </div>
+        <div id="right1">
+            <h1>Just do one thing or the other, don't try to be two people at once.</h1>
+        </div>
+    </div>
+
+
+    <div id="quote">
+        <div id="left2">
+            <h1>They're chasing us hard, because we represent everything that they fear.</h1>
+        </div>
+        <div id="right2">
+            <img src="asset/RDR2_dutch (1).png" alt="" width="500px" height="500px">
+        </div>
+    </div>
+            <center><h1 style="  font-family: 'Syne', sans-serif;font-weight: 800; margin-top: 100px; margin-bottom: 30px;  ">Honors</h1></center>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="honor">
+        <div id="left_honor" style="background-color:  rgba(255, 0, 0, 0.489); padding: 20px; border-radius: 20px; color: white;"  onclick="lowSound()">
+             <p style="margin-bottom: 15px; font-size: 13px">Click me</p>    
+            <img src="asset/icon1.png" alt="" height="100px" width="100px">
+        </div>
+        <div id="right_honor">
+            <p><span style="font-weight: bold; font-size: 2rem; color: red;">Low Honor:</span>  Arthur embraces a ruthless outlaw life, robbing, killing, and spreading fear. People fear or avoid him, prices rise, and the narrative becomes darker. Dishonorable acts like murder, theft, and cruelty lower honor. This path leads to grim consequences and a more tragic storyline.</p>
+        </div>
+    </div>
+    <div id="honor">
+        <div id="left_honor" style="background-color:  rgba(155, 150, 150, 0.482);  padding: 20px; border-radius: 20px; color: white;" onclick="highSound()">
+            <p style="margin-bottom: 15px; font-size: 13px">Click me</p>    
+            <img src="asset/icon2.png" alt="" height="100px" width="100px" >
+        </div>
+        <div id="right_honor">
+            <p>  <span style="font-weight: bold; font-size: 2rem; color: rgb(255, 0, 0);">High Honor:</span> Arthur acts with compassion and integrity, helping strangers and making moral choices. Townsfolk treat him kindly, stores offer discounts, and his story reflects redemption. Positive actions like donating, sparing lives, and rescuing people raise honor. It leads to a hopeful tone and better endings.</p>
+        </div>
+        
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <center>
+            <p>Play This</p>
+            <img id="statusImage" src="asset/play.png" alt="" onclick="playSound()">
+        </center><br><br>
+        <h1  style="text-align: center; ">Created by <a style="text-decoration: underline; color: red;" href="https://roobis.neocities.org" target="_blank" style="color: white; text-decoration: none;">Roobis</a></h1>
+    </footer>
+</div>
+
+
+
+
+
+
+
+</body>
+<script>
+    function lowSound() {
+        audio=new Audio('asset/low-honor.mp3');
+        audio.play();
+    }
+    function highSound() {
+        audio=new Audio('asset/high-honor.mp3');
+        audio.play();
+    }
+    function playSound() {
+    const audio = new Audio('asset/play.mp3');
+    const img = document.getElementById('statusImage');
+    audio.onplay = () => {
+        img.src = 'asset/pause.png';
+    };
+
+    audio.onended = () => {
+        img.src = 'asset/play.png';
+    };
+
+    audio.play();
+}
+  </script>
+</html>
