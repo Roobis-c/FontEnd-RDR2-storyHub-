@@ -13,5 +13,8 @@
 - 🎧 **Sound Effects Integration** — Dynamic audio that plays on user interactions to enhance immersion.
 - 🖱️ **Custom Cursor** — Western-themed cursor icons for added personality.
 
----<img  alt="screencapture-127-0-0-1-5500-new-html-2025-08-05-00_47_54" src="https://github.com/user-attachments/assets/795a8842-cdf8-45fe-bbb6-c62da19b436d" />
+## Take a look 👀 : <a href="https://roobis-c.github.io/FontEnd-RDR2-storyHub-/" targer="_blank">RDR 2 Story Hub</a>
+
+
+<img  alt="screencapture-127-0-0-1-5500-new-html-2025-08-05-00_47_54" src="https://github.com/user-attachments/assets/795a8842-cdf8-45fe-bbb6-c62da19b436d" />
 
